@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# Sugeeth's Expressive Showcase
 
-## Project info
+Welcome to my personal portfolio, blog, and documentation hub. This repository contains the source code for my website, fully generated as a static site and hosted on GitHub Pages.
 
-**URL**: https://lovable.dev/projects/8530e916-406e-4233-84fc-bc84aec5bead
+## Tech Stack
 
-## How can I edit this code?
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS & shadcn/ui
+- **Content Management**: Custom MDX Engine (Markdown files stored in `src/content`)
+- **Deployment**: GitHub Pages (Static Export)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Blog**: Read my latest thoughts and articles.
+- **Stories**: Personal anecdotes and experiences.
+- **Docs**: Comprehensive, GitBook-style documentation with a sticky sidebar, interactive Mermaid diagrams, and beautiful callouts.
+- **Markdown-based**: All content is easily maintainable by simply editing `.md` files.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8530e916-406e-4233-84fc-bc84aec5bead) and start prompting.
+## Local Development
 
-Changes made via Lovable will be committed automatically to this repo.
+To run this project locally:
 
-**Use your preferred IDE**
+```bash
+# 1. Install dependencies
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2. Run the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Content Management
 
-**Use GitHub Codespaces**
+All site content is driven by standard markdown files. Simply add or edit `.md` files in the following directories:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `src/content/blog/` - For blog posts
+- `src/content/docs/` - For technical documentation
+- `src/content/stories/` - For personal stories
 
-## What technologies are used for this project?
+### Rich Documentation Support
 
-This project is built with:
+The Docs and Stories sections support advanced MDX features:
+- **Mermaid Diagrams**: Just use ````mermaid` blocks to render interactive SVG diagrams!
+- **Callouts**: Use GitHub-style `> [!NOTE]` alerts.
+- **React Components**: You can inject React components like `<CardGrid>` and `<Card>` directly into your markdown.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8530e916-406e-4233-84fc-bc84aec5bead) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This site is automatically deployed to GitHub Pages via GitHub Actions. Whenever a push to the `main` branch occurs, the site is statically compiled into the `out` directory and published.
