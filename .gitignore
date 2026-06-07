@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+craft-content/
+
+# Next.js
+.next
+out
+build
+.vercel
+.turbo
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment variables
+.env*.local

@@ -1,0 +1,154 @@
+{
+  "profile": {
+    "name": "Sugeeth Jayaraj S A",
+    "initials": "SJ",
+    "role": "Developer & Innovator",
+    "location": "Chennai, Tamil Nadu",
+    "availability": "Available for opportunities",
+    "bio": [
+      "Hi, I'm Sugeeth! I love to innovate and make cool new projects. I've worked with VEX Robotics kits, built automation methods using iOS Shortcuts, and set up numerous websites across platforms.",
+      "I'm not just a developer—I'm a founder and a leader. Whether it's drafting the governance rules for Project Troopers, designing award-winning graphics for The Corridor Initiative, or configuring Linux and ChromeOS on old hardware, I dive deep into every challenge.",
+      "As an ENFJ-T, I believe in diplomacy, social engagement, and creating communities that empower others. I am always looking for the next big project to strengthen my skills and create lasting connections."
+    ],
+    "resumeUrl": "/Profile.pdf"
+  },
+  "stats": [
+    {
+      "value": "10+",
+      "label": "Projects Completed"
+    },
+    {
+      "value": "4+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "100%",
+      "label": "Dedication"
+    }
+  ],
+  "skills": {
+    "development": [
+      { "name": "TypeScript", "icon": "SiTypescript" },
+      { "name": "React", "icon": "FaReact" },
+      { "name": "Python", "icon": "FaPython" },
+      { "name": "Vite", "icon": "SiVite" },
+      { "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+      { "name": "Linux", "icon": "FaLinux" }
+    ],
+    "design": [
+      { "name": "UI/UX Design", "icon": "SiFigma" },
+      { "name": "Video Editing", "icon": "FaVideo" },
+      { "name": "Framer Motion", "icon": "SiFramer" }
+    ],
+    "leadership": [
+      { "name": "Investor Relations", "icon": "FaHandshake" },
+      { "name": "Team Leadership", "icon": "FaUsers" },
+      { "name": "Automation", "icon": "FaRobot" }
+    ]
+  },
+  "experience": [
+    {
+      "title": "Interim Lead of Development",
+      "company": "VITSION",
+      "period": "April 2026 - Present",
+      "description": "Leading the development department (WebDev and beyond), shaping technical architecture and guiding members."
+    },
+    {
+      "title": "Senior Technical Consultant",
+      "company": "180 Degrees Consulting VIT Chennai",
+      "period": "Feb 2026 - Present",
+      "description": "Part of the LLM Team doing specialized research. Previously joined as a Junior Technical Consultant in Sept 2025."
+    },
+    {
+      "title": "Co-Founder & Election Committee Head",
+      "company": "Project Troopers",
+      "period": "June 2023 - Present",
+      "description": "Co-founded a non-profit initiative to help students access notes. Drafted election rules, oversaw major structural reforms, and managed the GitBook-based website."
+    },
+    {
+      "title": "Co-Editor and Head of Design",
+      "company": "The Corridor Initiative",
+      "period": "Sept 2023 - May 2024",
+      "description": "Initiated a fortnightly school newsletter. Produced 8 editions, designed dynamic vocabulary wallpapers, and served as strategic advisor."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology - BTech (ECM)",
+      "school": "Vellore Institute of Technology",
+      "period": "Expected 2029",
+      "description": "Electronics and Computer Engineering. Active in CYSCOM, HackClub, Open Source Programming Club, AWS Cloud Club, and Music Club."
+    },
+    {
+      "degree": "Senior Secondary & Secondary Education",
+      "school": "Don Bosco School of Excellence (Egmore)",
+      "period": "2015 - 2025",
+      "description": "Spearheaded The DBXpress Sharks newspaper and founded multiple student-led initiatives."
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "AmazeCC",
+      "description": "A comprehensive tool for VIT students with attendance tracking, interactive schedules, and grade prediction powered by Welford's Algorithm. Crowdsourced question bank via AI extraction. (Forked from UniCC)",
+      "technologies": ["React", "Data Analytics", "API Integration", "Vercel"],
+      "category": "Development",
+      "demo": "https://amaze-cc.vercel.app",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Project Troopers Hub",
+      "description": "Architected and managed the knowledge base website for a non-profit initiative using GitBook and GitHub. Created automated iOS Shortcuts for seamless status updates.",
+      "technologies": ["GitBook", "Markdown", "iOS Shortcuts", "Automation"],
+      "category": "Development",
+      "demo": "#",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "The Corridor Initiative",
+      "description": "Co-Editor and Head of Design for a fortnightly school newsletter. Produced 8 complete editions and engineered a dynamic 'Word of the Day' vocabulary wallpaper integrated with class timetables.",
+      "technologies": ["Graphic Design", "Content Strategy", "Digital Publishing"],
+      "category": "Design",
+      "demo": "#",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "HSAG Ingeniousity",
+      "description": "A creative front to showcase personal works, including iOS shortcuts, published books, sheet music, and the Techneeka YouTube Channel.",
+      "technologies": ["Content Creation", "Video Editing", "Publishing"],
+      "category": "Design",
+      "demo": "#",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Jugzards",
+      "description": "Co-founded a non-profit organization to distribute free prep materials for Class 10 students, later merged with Project Troopers.",
+      "technologies": ["Leadership", "Curriculum Design", "Negotiation"],
+      "category": "Initiatives",
+      "demo": "#",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "MiniMakerzz 5.0",
+      "description": "Spearheaded a YouTube channel during the 2020 lockdown focusing on informational series (e.g., COVID-19, World Capitals). Acted as primary Video Editor and Content Strategist.",
+      "technologies": ["Video Production", "YouTube Strategy", "Graphic Design"],
+      "category": "Design",
+      "demo": "#",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "The DBXpress Sharks",
+      "description": "Co-founded a school newspaper that later evolved into the official school-published newsletter 'DBXpressions'.",
+      "technologies": ["Journalism", "PR", "Team Building"],
+      "category": "Initiatives",
+      "demo": "#",
+      "featured": false
+    }
+  ]
+}
