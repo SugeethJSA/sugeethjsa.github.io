@@ -1,16 +1,46 @@
+import { getDocs } from "@/lib/docs";
+import Link from "next/link";
+import { ArrowRight, BookOpen } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
 export default function DocsIndex() {
+  const docs = getDocs();
+
   return (
-    <article className="prose prose-invert prose-lg max-w-none prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80">
-      <div className="not-prose mb-8">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">Documentation</h1>
-        <p className="text-xl text-muted-foreground">Comprehensive guides, references, and rules.</p>
+    <main className="container max-w-7xl mx-auto px-4 py-16">
+      <div className="mb-16 text-center">
+        <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-500 to-emerald-500">
+          Documentation Hub
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Explore comprehensive guides, references, and manuals for my projects, including Spring Lock.
+        </p>
       </div>
-      <p>
-        Welcome to the documentation hub. Here you'll find detailed technical overviews, rules and regulations for various groups, and manuals for my apps like Spring Lock.
-      </p>
-      <p>
-        Select a document from the left sidebar to start reading.
-      </p>
-    </article>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {docs.map((doc) => (
+          <Link key={doc.slug} href={`/docs/${doc.slug}`}>
+            <Card className="glassmorphism h-full group hover:-translate-y-2 transition-all duration-300 hover:shadow-primary/20 hover:border-primary/50 cursor-pointer overflow-hidden relative">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-all"></div>
+              <CardContent className="p-8 flex flex-col h-full relative z-10">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-primary">
+                  <BookOpen className="w-6 h-6" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {doc.title}
+                </h3>
+                <p className="text-muted-foreground mb-6 flex-grow">
+                  {doc.description || "Read the detailed documentation."}
+                </p>
+                <div className="flex items-center text-sm font-semibold text-primary mt-auto">
+                  View Documentation
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </CardContent>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </main>
   );
 }

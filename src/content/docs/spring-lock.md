@@ -1,97 +1,144 @@
 ---
-title: "Spring Lock: Complete Reference Guide"
+title: "Spring Lock"
 date: "2023-10-12"
-description: "Comprehensive documentation for Spring Lock, the ultimate security tool for iOS, iPadOS, and macOS."
+description: "Comprehensive documentation for Spring Lock, the ultimate app security tool for iOS, iPadOS, and macOS."
 ---
 
 **Spring Lock** is the evolved successor to **HSAG AppLock**, offering a robust, secure, and user-friendly experience to lock apps and protect sensitive data across the Apple ecosystem. With its integration of state-of-the-art encryption tools and system automations, this tool guarantees unmatched security and flexibility for power users and administrators alike.
 
 ---
 
-## 🚀 Quick Start & Installation
+## 📊 Overview
 
-To get started with Spring Lock, ensure you are running iOS 15+, iPadOS 15+, or macOS Monterey+.
+Compatible with **iOS 15+, iPadOS 15+, and macOS Monterey+**.
 
-1. Download the shortcut from the official repository.
-2. Add the shortcut to your Shortcuts app.
-3. Upon first run, the **Setup Wizard** will initialize.
-
-> [!CAUTION]
-> If you skip the initial setup wizard, Spring Lock will automatically lock itself down to prevent unauthorized backdoor access. You must complete the setup process entirely.
-
-### Permissions Required
-The following permissions are requested during installation and must be granted for optimal functionality:
-
-| Permission | Purpose |
-|------------|---------|
-| **Shortcuts Data Folder** | To securely store your encrypted configuration data. |
-| **Google Drive (WebKit)** | To fetch the latest guidance videos and cloud updates. |
-| **Front Camera** | To silently capture photos of unauthorized users attempting to guess your PIN. |
+Spring Lock employs system automation to lock applications securely. Passwords are encrypted with **CryptoKit**, ensuring they cannot be easily accessed from configuration files. This shortcut even allows users to lock the Shortcuts app itself, catering to those concerned about unauthorized access or deletion of automations. It combines ease of use with a sophisticated framework to deliver a smooth and hassle-free experience.
 
 ---
 
-## 🔐 Core Architecture
+## 🛡️ Privacy Access
 
-Spring Lock employs a hybrid encryption mechanism utilizing **CryptoKit** and a customized **CryptoEngine**.
+The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut Spring Lock requires access to the following features. 
 
-```mermaid
-graph TD;
-    A[User Opens App] --> B{Spring Lock Intercepts};
-    B -- Authorized --> C[Grant Access];
-    B -- Unauthorized --> D[Prompt for PIN/Password];
-    D -- Correct Entry --> C;
-    D -- Incorrect Entry --> E[Capture Front Camera Photo];
-    E --> F[Log IP & Time];
-    F --> G[Deny Access];
-```
+<cardgrid>
+  <card title="Shortcuts Data Folder" icon="FolderLock">
+    To store encrypted configuration data locally on your device.
+  </card>
+  <card title="Google Drive (WebKit)" icon="CloudDownload">
+    Anonymous download access to fetch the guidance video for set-up (optional).
+  </card>
+  <card title="Front Camera Access" icon="Camera">
+    To take photos of unauthorised people trying to login to the protected app, but entered the wrong password.
+  </card>
+  <card title="Shortcuts App Launch" icon="Zap">
+    To protect the app upon launch, otherwise the shortcut won’t work.
+  </card>
+  <card title="Delete Files" icon="Trash2">
+    To delete configuration data upon request from the Admin User.
+  </card>
+  <card title="Notifications" icon="Bell">
+    To keep users informed of relevant updates during execution, avoiding intrusive alerts.
+  </card>
+</cardgrid>
 
-### Advanced Tamper Detection
-We use MD5 hashing to ensure configuration files are not tampered with. If a discrepancy is found, Spring Lock will revert to the last known secure state.
-
-```javascript
-// Example of the validation logic used internally
-function validateIntegrity(configHash) {
-  const currentHash = generateMD5(config);
-  if (currentHash !== configHash) {
-      triggerLockdown();
-      restoreBackup();
-  }
-}
-```
-
----
-
-## 🛡️ Security Features
-
-### 1. Two-Factor Authentication (2FA)
-Unlike standard app locks, Spring Lock requires both a numeric PIN and an alphanumeric password for administrative access. This two-step verification adds an exponential layer of security.
-
-### 2. Intruder Alerts
-If a user fails the login attempt three times, the front camera is triggered silently. The image is saved directly to a hidden directory in the Shortcuts Data folder, completely bypassing the Photos app to prevent the intruder from deleting it.
-
-### 3. Ghost Accounts
-You can pre-configure "Ghost Accounts" with fake passwords. If an intruder forces you to unlock an app, providing the Ghost Password will unlock a restricted, sandboxed version of the app.
+> [!NOTE]
+> You can safely ignore other requests for access. If you feel this declaration is outdated, leave feedback and the developer will notice it.
 
 ---
 
-## 🛠️ Advanced Settings & Customization
+## 🔧 Key Features
 
-> [!TIP]
-> You can access the Admin Panel by typing `admin:dashboard` in the password field.
+<cardgrid>
+  <card title="Security" icon="Shield">
+    **Encryption**: Passwords and sensitive data are secured using CryptoEngine, integrated with CryptoKit.
+    **2FA**: Requires both a PIN and password for access.
+    **Tamper Detection**: Uses MD5 hashing to ensure config files are intact.
+    **Intruder Alerts**: Captures a photo of unauthorized users.
+  </card>
 
-Within the settings menu, you have access to:
-- **UI Customization**: Switch between Dark Mode, Light Mode, and OLED Pitch Black.
-- **Auto-Lock Timers**: Set custom grace periods (e.g., app remains unlocked for 5 minutes after leaving).
-- **Silent Mode Overrides**: Force the device to ring an alarm if an intruder fails login, even if the phone is on silent.
+  <card title="User Interface" icon="Layout">
+    **Intuitive UI**: Designed with usability in mind, leveraging HSAG UI 4 for an aesthetically pleasing experience.
+  </card>
 
-## 📦 Version History & Migration
+  <card title="Flexibility" icon="Settings">
+    **Reset Capability**: Options to reset settings and start fresh.
+    **Guest Accounts**: Pre-configured with encrypted passwords for unused accounts.
+    **Offline Functionality**: Operates without internet access.
+  </card>
 
-### **Version 5.3 (Current)**
-- **Status**: Stable
-- **Updates**:
-  - Updated Icon Pack.
-  - Mitigated the multiple decimal points error in the updater engine.
-  - Restored missing setup screens from 5.2.
+  <card title="Maintenance" icon="Wrench">
+    **Cleanup Functionality**: Users can delete files generated by the shortcut safely.
+    **Built-in Updater**: Employs HSAG Ultimate Updater to apply updates.
+  </card>
+</cardgrid>
 
-> [!WARNING]
-> If you are migrating from HSAG AppLock (Version 4 or below), do **not** delete your old configuration files until the Version 5 migration tool explicitly instructs you to do so, otherwise you will permanently lose your encrypted vaults.
+---
+
+## 🕵️ Setup Process
+
+The setup process is strictly required. If setup is skipped, the shortcut becomes unusable to prevent security vulnerabilities, ensuring that users must complete the process for optimal performance.
+
+<step step="1" title="Initial Installation">
+  The initial installation setup configures core security features. You will need to grant the required permissions (Shortcuts Data folder, Notifications, Camera).
+</step>
+
+<step step="2" title="Activation">
+  Activation of the login credentials system finalizes the setup for secure access. You will set up your Master Admin PIN and Password here.
+</step>
+
+---
+
+## 📈 Version History
+
+Here is the journey of Spring Lock from its inception to the current version.
+
+### Version 5.3 (Current)
+> [!SUCCESS]
+> **Status:** Stable Release (Oct 2023)
+
+- Icons have been updated throughout the shortcut.
+- **Bug fix**: The "updater" has been updated to mitigate the multiple decimal points error (supports two decimal points now).
+- **Bug fix**: A setup screen was missing, it has now been fixed.
+
+### Version 5.2.1
+- **Critical Bug fix**: Fixes a bug where config files might not save to iCloud as a file on iOS 15.
+- Fixes a bug in the CryptoEngine where an attacker might be able to bypass the OAuth screen using a specially crafted malicious password.
+
+### Version 5.2
+- **Unstable**
+- HSAG AppLock was officially rebranded to **Spring Lock**.
+- Code refresh: 102 actions were purged.
+
+### Version 5.0
+- **Feature Update**
+- Rewritten User Interface - The new improved HSAG UI 3 took effect!
+- Profile Pics for each user.
+- The Swing Updater was replaced with HSAG Ultimate Updater.
+- Redesigned Security Alert System.
+
+### Version 4.2
+- **Stable**
+- Rewritten Security System - The HSAG Crypto Engine took effect.
+- The shortcut became RISC-based, with only necessary components loading upon startup. Faster Load times!
+
+### Version 3
+- **Vulnerable**
+- Rewritten Security System - The HSAG Core Security Feature Engine.
+- This version ended up as a failure when a bug was discovered and exploited by `@SpaceNeb`, leading to unauthorized discovery of passwords. Fixed in v4.
+
+### Version 1
+- **Vulnerable**
+- The first version of this shortcut, which was buggy due to an infinite loop strategy. Solved in version 2.1.
+
+---
+
+## 📢 Feedback and Acknowledgments
+
+Your feedback is invaluable in improving Spring Lock. Over the years, we have reduced unnecessary actions and enhanced usability. However, there's still room for optimization.
+
+**Special thanks to:**
+- `@Schl3ck` for CryptoKit, a cornerstone of Spring Lock's encryption.
+- `@SpaceNeb` for identifying critical vulnerabilities in Version 3, enabling us to improve security features.
+- **HSAG** for the Icon Pack UI 4.
+
+> Whether you're looking for robust protection or seamless usability, Spring Lock is your go-to solution for app-locking needs.

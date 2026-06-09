@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -15,7 +18,7 @@ const navLinks = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Handle scroll effect
   useEffect(() => {
@@ -29,7 +32,7 @@ export function Navigation() {
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <header
@@ -44,7 +47,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
-            to="/"
+            href="/"
             className="group flex items-center space-x-2 font-display font-bold text-xl text-foreground hover:text-primary transition-all duration-300 focus-ring rounded-lg px-2 py-1"
           >
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
@@ -59,17 +62,17 @@ export function Navigation() {
             {navLinks.map((link) => (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={cn(
                   "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-muted/50 focus-ring",
-                  location.pathname === link.href
+                  pathname === link.href
                     ? "text-primary bg-muted/30"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {link.label}
                 {/* Active indicator */}
-                {location.pathname === link.href && (
+                {pathname === link.href && (
                   <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full"></div>
                 )}
               </Link>
@@ -117,10 +120,10 @@ export function Navigation() {
             {navLinks.map((link, index) => (
               <Link
                 key={link.href}
-                to={link.href}
+                href={link.href}
                 className={cn(
                   "block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 hover:bg-muted/50 focus-ring animate-float",
-                  location.pathname === link.href
+                  pathname === link.href
                     ? "text-primary bg-muted/30"
                     : "text-foreground",
                   isOpen && "animate-fade-in"
