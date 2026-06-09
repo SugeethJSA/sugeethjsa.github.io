@@ -4,13 +4,25 @@ import { MDXContent } from "@/components/mdx-components";
 import { TableOfContents } from "@/components/toc";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Clock, Tag } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock } from "lucide-react";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const docs = getDocs();
   return docs.map((doc) => ({
     slug: doc.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const doc = getDoc(resolvedParams.slug);
+  if (!doc) return {};
+  return {
+    title: `${doc.title} | Docs`,
+    description: doc.description,
+    openGraph: { title: doc.title, description: doc.description },
+  };
 }
 
 export default async function DocPost({ params }: { params: Promise<{ slug: string }> }) {

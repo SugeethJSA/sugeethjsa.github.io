@@ -1,49 +1,40 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
-// Sample navigation structure – can be generated dynamically later
-const navItems = [
-  { title: "Projects", href: "/docs", children: [
-    { title: "Spring Lock", href: "/docs/spring-lock" },
-    { title: "Other Project", href: "/docs/other-project" },
-  ]},
-  { title: "Guides", href: "/docs/guides", children: [] },
-];
-
-export default function DocsSidebar() {
+export default function DocsSidebar({ docs }: { docs: { slug: string; title: string }[] }) {
   const pathname = usePathname();
+
   return (
-    <nav className="sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto p-4 bg-white/30 backdrop-blur-md rounded-lg border border-border/20">
-      <ul className="space-y-2">
-        {navItems.map((item) => (
-          <li key={item.title}>
+    <nav className="sticky top-24 max-h-[calc(100vh-6rem)] overflow-y-auto p-4 bg-background/60 backdrop-blur-md rounded-xl border border-border/40 shadow-sm">
+      <h3 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-4 px-2">
+        All Docs
+      </h3>
+      <ul className="space-y-1">
+        <li>
+          <Link
+            href="/docs"
+            className={cn(
+              "block px-2 py-2 text-sm rounded-lg transition-colors hover:bg-muted/50",
+              pathname === "/docs" ? "text-primary font-medium bg-muted/30" : "text-muted-foreground"
+            )}
+          >
+            Overview
+          </Link>
+        </li>
+        {docs.map((doc) => (
+          <li key={doc.slug}>
             <Link
-              href={item.href}
+              href={`/docs/${doc.slug}`}
               className={cn(
-                "block font-medium text-base hover:text-foreground transition-colors",
-                pathname.startsWith(item.href) && "text-emerald-600"
+                "block px-2 py-2 text-sm rounded-lg transition-colors hover:bg-muted/50",
+                pathname === `/docs/${doc.slug}` ? "text-primary font-medium bg-muted/30" : "text-muted-foreground"
               )}
             >
-              {item.title}
+              {doc.title}
             </Link>
-            {item.children && item.children.length > 0 && (
-              <ul className="ml-4 mt-1 space-y-1">
-                {item.children.map((child) => (
-                  <li key={child.title}>
-                    <Link
-                      href={child.href}
-                      className={cn(
-                        "block text-sm hover:text-foreground transition-colors",
-                        pathname === child.href && "text-emerald-500"
-                      )}
-                    >
-                      {child.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
           </li>
         ))}
       </ul>

@@ -1,14 +1,37 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, MapPin } from "lucide-react";
+import { Mail, Send, MapPin, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function ContactSection() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    // Uses Web3Forms (free tier) - replace with your own access key at https://web3forms.com
+    data.append("access_key", "YOUR_ACCESS_KEY");
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: data,
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      form.reset();
+    }
+  };
+
   return (
     <section className="py-24 relative z-10 bg-background overflow-hidden">
-      {/* Decorative Blob */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full mix-blend-multiply filter blur-[100px] opacity-50 dark:bg-purple-500/20"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl relative z-10">
@@ -20,7 +43,6 @@ export function ContactSection() {
         </div>
 
         <div className="grid md:grid-cols-5 gap-8">
-          {/* Contact Info */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +79,6 @@ export function ContactSection() {
             </Card>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,47 +88,35 @@ export function ContactSection() {
           >
             <Card className="glassmorphism p-2">
               <CardContent className="pt-6">
-                <form action="mailto:sugeeth2007@gmail.com" method="post" encType="text/plain" className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        name="name"
-                        className="flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="John Doe"
-                        required 
-                      />
+                {submitted ? (
+                  <div className="flex flex-col items-center justify-center py-12 text-center space-y-4">
+                    <CheckCircle2 className="w-16 h-16 text-emerald-500" />
+                    <h3 className="text-2xl font-bold">Message Sent!</h3>
+                    <p className="text-muted-foreground">Thank you for reaching out. I'll get back to you soon.</p>
+                    <Button variant="outline" onClick={() => setSubmitted(false)}>Send Another</Button>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="text-sm font-medium">Name</label>
+                        <Input type="text" id="name" name="name" placeholder="John Doe" required />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="text-sm font-medium">Email</label>
+                        <Input type="email" id="email" name="email" placeholder="john@example.com" required />
+                      </div>
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">Email</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        name="email"
-                        className="flex h-10 w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                        placeholder="john@example.com"
-                        required 
-                      />
+                      <label htmlFor="message" className="text-sm font-medium">Message</label>
+                      <Textarea id="message" name="message" rows={5} placeholder="Hi Sugeeth, I'd like to talk about..." required />
                     </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">Message</label>
-                    <textarea 
-                      id="message" 
-                      name="message"
-                      rows={5}
-                      className="flex w-full rounded-md border border-input bg-background/50 px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Hi Sugeeth, I'd like to talk about..."
-                      required 
-                    ></textarea>
-                  </div>
-                  <Button type="submit" className="w-full shadow-md hover:shadow-primary/25 transition-all">
-                    Send Message
-                    <Send className="w-4 h-4 ml-2" />
-                  </Button>
-                </form>
+                    <Button type="submit" className="w-full shadow-md hover:shadow-primary/25 transition-all">
+                      Send Message
+                      <Send className="w-4 h-4 ml-2" />
+                    </Button>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </motion.div>

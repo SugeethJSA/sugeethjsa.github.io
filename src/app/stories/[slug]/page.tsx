@@ -5,12 +5,24 @@ import remarkGfm from "remark-gfm";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const stories = getStories();
   return stories.map((story) => ({
     slug: story.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const story = getStory(resolvedParams.slug);
+  if (!story) return {};
+  return {
+    title: `${story.title} | Stories`,
+    description: story.description,
+    openGraph: { title: story.title, description: story.description },
+  };
 }
 
 export default async function StoryPost({ params }: { params: Promise<{ slug: string }> }) {

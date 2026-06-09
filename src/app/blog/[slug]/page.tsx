@@ -5,12 +5,24 @@ import remarkGfm from "remark-gfm";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = getBlogPost(resolvedParams.slug);
+  if (!post) return {};
+  return {
+    title: `${post.title} | Blog`,
+    description: post.description,
+    openGraph: { title: post.title, description: post.description },
+  };
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
