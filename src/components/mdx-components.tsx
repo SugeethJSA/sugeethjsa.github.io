@@ -59,6 +59,7 @@ const components: any = {
   img: ({ node, ...props }: any) => (
     <span className="flex flex-col items-center my-10">
       <img 
+        loading="lazy"
         className="rounded-2xl border border-border/50 shadow-lg hover:shadow-xl transition-all duration-300 max-w-full h-auto hover:scale-[1.02]" 
         {...props} 
       />

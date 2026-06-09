@@ -116,6 +116,24 @@
     },
     {
       "id": 4,
+      "title": "Spring Lock",
+      "description": "A robust iOS/iPadOS/macOS shortcut for locking apps with CryptoKit encryption, 2FA, tamper detection, and intruder photo capture. Rebranded from HSAG AppLock.",
+      "technologies": ["iOS Shortcuts", "CryptoKit", "Automation", "Security"],
+      "category": "Development",
+      "demo": "#",
+      "featured": true
+    },
+    {
+      "id": 5,
+      "title": "Spring PDF Tools",
+      "description": "Offline PDF manipulation toolkit for iOS — split PDFs into PNGs, create readable/unreadable PDFs, and combine Master ZIP files into single PDFs.",
+      "technologies": ["iOS Shortcuts", "PDF", "Automation"],
+      "category": "Development",
+      "demo": "#",
+      "featured": true
+    },
+    {
+      "id": 6,
       "title": "HSAG Ingeniousity",
       "description": "A creative front to showcase personal works, including iOS shortcuts, published books, sheet music, and the Techneeka YouTube Channel.",
       "technologies": ["Content Creation", "Video Editing", "Publishing"],
@@ -124,7 +142,7 @@
       "featured": false
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "Jugzards",
       "description": "Co-founded a non-profit organization to distribute free prep materials for Class 10 students, later merged with Project Troopers.",
       "technologies": ["Leadership", "Curriculum Design", "Negotiation"],
@@ -133,7 +151,7 @@
       "featured": false
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "MiniMakerzz 5.0",
       "description": "Spearheaded a YouTube channel during the 2020 lockdown focusing on informational series (e.g., COVID-19, World Capitals). Acted as primary Video Editor and Content Strategist.",
       "technologies": ["Video Production", "YouTube Strategy", "Graphic Design"],
@@ -142,12 +160,39 @@
       "featured": false
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "The DBXpress Sharks",
       "description": "Co-founded a school newspaper that later evolved into the official school-published newsletter 'DBXpressions'.",
       "technologies": ["Journalism", "PR", "Team Building"],
       "category": "Initiatives",
       "demo": "#",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "IBM Qiskit Hackathon Winner",
+      "description": "First place project comparing Recurrent Neural Networks against Quantum Reservoir Computing to forecast renewable energy sources using historic weather data.",
+      "technologies": ["Quantum Computing", "Python", "Machine Learning", "Qiskit"],
+      "category": "Development",
+      "demo": "https://github.com/dhivyanj/qff25-hthn",
+      "featured": true
+    },
+    {
+      "id": 11,
+      "title": "V-Vortex 2026",
+      "description": "Led and coordinated a major event under SCOPE VIT Chennai as Student Coordinator, showcasing leadership and event management skills.",
+      "technologies": ["Event Management", "Leadership", "Public Speaking"],
+      "category": "Initiatives",
+      "demo": "#",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "AmazeSort",
+      "description": "A rule-based and AI-based file sorting utility that automatically organizes files into directories based on user-defined rules and machine learning classification.",
+      "technologies": ["Python", "Machine Learning", "Automation"],
+      "category": "Development",
+      "demo": "https://github.com/SugeethJSA/AmazeSort",
       "featured": false
     }
   ]

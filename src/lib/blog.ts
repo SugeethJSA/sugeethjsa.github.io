@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getReadingTime } from "./reading-time";
 
 const blogDirectory = path.join(process.cwd(), "src/content/blog");
 
@@ -10,9 +11,14 @@ export interface BlogPost {
   date: string;
   description: string;
   content: string;
+  readingTime: string;
 }
 
+const cache = new Map<string, BlogPost[]>();
+
 export function getBlogPosts(): BlogPost[] {
+  if (cache.has("all")) return cache.get("all")!;
+
   if (!fs.existsSync(blogDirectory)) {
     return [];
   }
@@ -31,16 +37,20 @@ export function getBlogPosts(): BlogPost[] {
       date: matterResult.data.date,
       description: matterResult.data.description,
       content: matterResult.content,
+      readingTime: getReadingTime(matterResult.content),
     };
   });
 
-  return allPostsData.sort((a, b) => {
+  const sorted = allPostsData.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
       return -1;
     }
   });
+
+  cache.set("all", sorted);
+  return sorted;
 }
 
 export function getBlogPost(slug: string): BlogPost | null {
@@ -57,5 +67,6 @@ export function getBlogPost(slug: string): BlogPost | null {
     date: matterResult.data.date,
     description: matterResult.data.description,
     content: matterResult.content,
+    readingTime: getReadingTime(matterResult.content),
   };
 }

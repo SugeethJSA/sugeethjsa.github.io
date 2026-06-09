@@ -1,7 +1,8 @@
 import { getBlogPosts } from "@/lib/blog";
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { format, parseISO } from "date-fns";
+import { Clock } from "lucide-react";
 
 export default function BlogIndex() {
   const posts = getBlogPosts();
@@ -25,6 +26,10 @@ export default function BlogIndex() {
                   </time>
                 </div>
                 <CardDescription className="text-base">{post.description}</CardDescription>
+                <div className="flex items-center gap-1 text-xs text-muted-foreground mt-2">
+                  <Clock className="w-3 h-3" />
+                  <span>{post.readingTime}</span>
+                </div>
               </CardHeader>
             </Card>
           </Link>

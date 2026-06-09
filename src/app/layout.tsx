@@ -3,16 +3,24 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
+import { BackToTop } from "@/components/back-to-top";
+import { PageTransition } from "@/components/page-transition";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sugeeth Jayaraj | Developer & Innovator",
   description: "Portfolio of Sugeeth Jayaraj, a Developer & Innovator based in Chennai.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+  },
   openGraph: {
     title: "Sugeeth Jayaraj | Developer & Innovator",
     description: "Portfolio of Sugeeth Jayaraj, a Developer & Innovator based in Chennai.",
-    url: "https://sugeethjsa.com", // Replace with actual URL when deployed
+    url: "https://sugeethjsa.com",
     siteName: "Sugeeth Jayaraj Portfolio",
     type: "website",
   },
@@ -34,7 +42,8 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
           <div className="relative flex min-h-screen flex-col">
             <Navigation />
-            <main className="flex-1 pt-16">{children}</main>
+            <main className="flex-1 pt-16"><PageTransition>{children}</PageTransition></main>
+            <BackToTop />
           </div>
         </ThemeProvider>
       </body>

@@ -1,65 +1,33 @@
 ---
 title: "Quick Start Guide"
 date: "2024-01-01"
-description: "Welcome to the central documentation hub. Start here to learn how to navigate the guides."
+description: "Overview of the documentation hub and how to navigate the guides."
 ---
 
-# Welcome to the Docs 📖
+Welcome to the documentation hub. This site contains in-depth guides and API references for the tools and projects I've built over the years.
 
-Welcome to the central repository for all my project documentation, rulebooks, and technical guides. Whether you're looking to install **Spring Lock** or integrate the **HSAG Framework**, you're in the right place.
+## Available Docs
 
-## How to use these docs
+<cardgrid>
+  <card title="Spring Lock" href="/docs/spring-lock" icon="Shield">
+    Comprehensive guide to the iOS app-locking shortcut with CryptoKit encryption, 2FA, intruder alerts, and more.
+  </card>
+  <card title="Spring PDF Tools" href="/docs/spring-pdf-tools" icon="FileText">
+    Offline PDF manipulation — PNG extraction, readable/unreadable conversion, Master ZIP assembly, and custom naming.
+  </card>
+  <card title="Naming Scheme API" href="/docs/spring-pdf-tools/naming-scheme" icon="Tag">
+    API reference for the modular file-naming engine used inside Spring PDF Tools.
+  </card>
+  <card title="HSAG Ingeniousity" href="/docs/hsag-ingeniousity" icon="Building2">
+    Archival overview of the defunct company behind HSAG AppLock (the predecessor to Spring Lock).
+  </card>
+</cardgrid>
 
-The documentation is organized linearly, but you can jump to any section using the **left sidebar navigation**. 
+## How to Use These Docs
 
-- **Spring Lock**: Everything you need to secure your iOS devices.
-- **HSAG Ingeniousity**: The technical architecture and rules behind the HSAG ecosystem.
+- The **sidebar** on the left lists all available documentation. Click any entry to jump straight to it.
+- Each page includes a **table of contents** on the right for quick navigation within the article.
+- Use the **search** feature (if available) to find specific topics across all docs.
+- Documentation is organised linearly, but you can start anywhere.
 
-## Documentation Standards
-
-We hold our documentation to the highest standard. Throughout these guides, you will find:
-
-### 1. Highlighted Alerts
-Pay attention to these boxes, as they contain critical information.
-
-> [!NOTE]
-> This is a note containing background context.
-
-> [!WARNING]
-> This is a warning about potential breaking changes.
-
-> [!CAUTION]
-> This is a severe caution regarding data loss or security.
-
-### 2. Code Snippets
-We provide copy-paste ready code snippets for quick integration:
-
-```python
-def hello_world():
-    print("Welcome to the beautiful documentation!")
-```
-
-### 3. Architecture Diagrams
-Complex systems are broken down into easy-to-understand visual diagrams:
-
-```mermaid
-pie title Document Types
-    "Technical Specs" : 45
-    "Installation Guides" : 25
-    "Rulebooks" : 20
-    "API References" : 10
-```
-
-## Beautiful Cards in MDX
-You can drop React components right into your markdown! 
-
-<CardGrid>
-  <Card title="Spring Lock" href="/docs/spring-lock">
-    Secure your iOS devices using state-of-the-art encryption algorithms.
-  </Card>
-  <Card title="HSAG Framework" href="/docs/hsag-ingeniousity">
-    Scalable microservices for real-time web sync and moderation.
-  </Card>
-</CardGrid>
-
-Start exploring by clicking on a topic in the sidebar!
+Choose a topic above or use the sidebar to begin exploring.

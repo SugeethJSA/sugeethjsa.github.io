@@ -2,13 +2,20 @@
 title: "Spring Lock"
 date: "2023-10-12"
 description: "Comprehensive documentation for Spring Lock, the ultimate app security tool for iOS, iPadOS, and macOS."
+projectOrder: 1
 ---
 
 **Spring Lock** is the evolved successor to **HSAG AppLock**, offering a robust, secure, and user-friendly experience to lock apps and protect sensitive data across the Apple ecosystem. With its integration of state-of-the-art encryption tools and system automations, this tool guarantees unmatched security and flexibility for power users and administrators alike.
 
+<cardgrid>
+  <card title="Version History" href="/docs/spring-lock/version-history" icon="Clock">
+    Full changelog from v1 through v5.3
+  </card>
+</cardgrid>
+
 ---
 
-## 📊 Overview
+## Overview
 
 Compatible with **iOS 15+, iPadOS 15+, and macOS Monterey+**.
 
@@ -16,9 +23,9 @@ Spring Lock employs system automation to lock applications securely. Passwords a
 
 ---
 
-## 🛡️ Privacy Access
+## Privacy Access
 
-The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut Spring Lock requires access to the following features. 
+The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut Spring Lock requires access to the following features.
 
 <cardgrid>
   <card title="Shortcuts Data Folder" icon="FolderLock">
@@ -31,7 +38,7 @@ The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut 
     To take photos of unauthorised people trying to login to the protected app, but entered the wrong password.
   </card>
   <card title="Shortcuts App Launch" icon="Zap">
-    To protect the app upon launch, otherwise the shortcut won’t work.
+    To protect the app upon launch, otherwise the shortcut won't work.
   </card>
   <card title="Delete Files" icon="Trash2">
     To delete configuration data upon request from the Admin User.
@@ -46,7 +53,7 @@ The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut 
 
 ---
 
-## 🔧 Key Features
+## Key Features
 
 <cardgrid>
   <card title="Security" icon="Shield">
@@ -74,7 +81,7 @@ The developer, Sugeeth Jayaraj Samala Augustine, has declared that the shortcut 
 
 ---
 
-## 🕵️ Setup Process
+## Setup Process
 
 The setup process is strictly required. If setup is skipped, the shortcut becomes unusable to prevent security vulnerabilities, ensuring that users must complete the process for optimal performance.
 
@@ -88,51 +95,7 @@ The setup process is strictly required. If setup is skipped, the shortcut become
 
 ---
 
-## 📈 Version History
-
-Here is the journey of Spring Lock from its inception to the current version.
-
-### Version 5.3 (Current)
-> [!SUCCESS]
-> **Status:** Stable Release (Oct 2023)
-
-- Icons have been updated throughout the shortcut.
-- **Bug fix**: The "updater" has been updated to mitigate the multiple decimal points error (supports two decimal points now).
-- **Bug fix**: A setup screen was missing, it has now been fixed.
-
-### Version 5.2.1
-- **Critical Bug fix**: Fixes a bug where config files might not save to iCloud as a file on iOS 15.
-- Fixes a bug in the CryptoEngine where an attacker might be able to bypass the OAuth screen using a specially crafted malicious password.
-
-### Version 5.2
-- **Unstable**
-- HSAG AppLock was officially rebranded to **Spring Lock**.
-- Code refresh: 102 actions were purged.
-
-### Version 5.0
-- **Feature Update**
-- Rewritten User Interface - The new improved HSAG UI 3 took effect!
-- Profile Pics for each user.
-- The Swing Updater was replaced with HSAG Ultimate Updater.
-- Redesigned Security Alert System.
-
-### Version 4.2
-- **Stable**
-- Rewritten Security System - The HSAG Crypto Engine took effect.
-- The shortcut became RISC-based, with only necessary components loading upon startup. Faster Load times!
-
-### Version 3
-- **Vulnerable**
-- Rewritten Security System - The HSAG Core Security Feature Engine.
-- This version ended up as a failure when a bug was discovered and exploited by `@SpaceNeb`, leading to unauthorized discovery of passwords. Fixed in v4.
-
-### Version 1
-- **Vulnerable**
-- The first version of this shortcut, which was buggy due to an infinite loop strategy. Solved in version 2.1.
-
----
-
-## 📢 Feedback and Acknowledgments
+## Feedback and Acknowledgments
 
 Your feedback is invaluable in improving Spring Lock. Over the years, we have reduced unnecessary actions and enhanced usability. However, there's still room for optimization.
 

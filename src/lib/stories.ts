@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { getReadingTime } from "./reading-time";
 
 const storiesDirectory = path.join(process.cwd(), "src/content/stories");
 
@@ -10,9 +11,14 @@ export interface StoryPost {
   date: string;
   description: string;
   content: string;
+  readingTime: string;
 }
 
+const cache = new Map<string, StoryPost[]>();
+
 export function getStories(): StoryPost[] {
+  if (cache.has("all")) return cache.get("all")!;
+
   if (!fs.existsSync(storiesDirectory)) {
     return [];
   }
@@ -30,10 +36,13 @@ export function getStories(): StoryPost[] {
       date: matterResult.data.date,
       description: matterResult.data.description,
       content: matterResult.content,
+      readingTime: getReadingTime(matterResult.content),
     };
   });
 
-  return allStoriesData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  const sorted = allStoriesData.sort((a, b) => (a.date < b.date ? 1 : -1));
+  cache.set("all", sorted);
+  return sorted;
 }
 
 export function getStory(slug: string): StoryPost | null {
@@ -50,5 +59,6 @@ export function getStory(slug: string): StoryPost | null {
     date: matterResult.data.date,
     description: matterResult.data.description,
     content: matterResult.content,
+    readingTime: getReadingTime(matterResult.content),
   };
 }

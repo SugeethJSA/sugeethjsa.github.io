@@ -17,6 +17,7 @@ export function ContactSection() {
     const data = new FormData(form);
 
     // Uses Web3Forms (free tier) - replace with your own access key at https://web3forms.com
+    // @see https://opencode.ai for setup instructions
     data.append("access_key", "YOUR_ACCESS_KEY");
 
     const res = await fetch("https://api.web3forms.com/submit", {

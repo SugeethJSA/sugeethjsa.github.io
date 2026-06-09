@@ -6,14 +6,17 @@ import { usePathname } from "next/navigation";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Search } from "@/components/search";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/achievements", label: "Achievements" },
   { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Blog" },
   { href: "/docs", label: "Docs" },
+  { href: "/docs/tips", label: "Tips" },
   { href: "/stories", label: "Stories" },
 ];
 
@@ -50,7 +53,7 @@ export function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="group flex items-center space-x-2 font-display font-bold text-xl text-foreground hover:text-primary transition-all duration-300 focus-ring rounded-lg px-2 py-1"
+            className="group flex items-center space-x-2 font-display font-bold text-xl text-foreground hover:text-primary transition-all duration-300 focus-ring rounded-lg px-2 py-1 shrink-0"
           >
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
               <Sparkles className="w-4 h-4 text-primary-foreground" />
@@ -60,13 +63,13 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-muted/50 focus-ring",
+                  "relative px-2 lg:px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 hover:bg-muted/50 focus-ring whitespace-nowrap",
                   pathname === link.href
                     ? "text-primary bg-muted/30"
                     : "text-muted-foreground hover:text-foreground"
@@ -79,7 +82,8 @@ export function Navigation() {
                 )}
               </Link>
             ))}
-            <div className="ml-4 pl-4 border-l border-muted">
+            <div className="flex items-center gap-1 shrink-0 ml-2 pl-2 border-l border-muted">
+              <Search />
               <ThemeToggle />
             </div>
           </div>
@@ -115,7 +119,7 @@ export function Navigation() {
         <div className={cn(
           "md:hidden transition-all duration-300 overflow-hidden",
           isOpen 
-            ? "max-h-64 opacity-100 pb-4" 
+            ? "max-h-[32rem] opacity-100 pb-4" 
             : "max-h-0 opacity-0"
         )}>
           <div className="glass rounded-xl border border-white/10 mt-2 p-2 space-y-1">
