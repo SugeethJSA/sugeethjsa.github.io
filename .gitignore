@@ -40,3 +40,5 @@ next-env.d.ts
 
 # Environment variables
 .env*.local
+craft-ref.pdf
+craft-ref.txt
