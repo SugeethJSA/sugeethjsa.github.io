@@ -2,13 +2,13 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { Search as SearchIcon, X, FileText, BookOpen } from "lucide-react";
+import { Search as SearchIcon, X, FileText, BookOpen, BookMarked } from "lucide-react";
 
 interface SearchResult {
   title: string;
   description: string;
   href: string;
-  type: "blog" | "story";
+  type: "blog" | "story" | "doc";
 }
 
 export function Search() {
@@ -100,8 +100,10 @@ export function Search() {
                 >
                   {result.type === "blog" ? (
                     <FileText className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                  ) : (
+                  ) : result.type === "story" ? (
                     <BookOpen className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                  ) : (
+                    <BookMarked className="w-5 h-5 text-purple-500 shrink-0 mt-0.5" />
                   )}
                   <div className="min-w-0">
                     <div className="font-medium truncate">{result.title}</div>

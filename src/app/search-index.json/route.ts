@@ -1,11 +1,22 @@
 import { getBlogPosts } from "@/lib/blog";
 import { getStories } from "@/lib/stories";
+import { getAllProjects } from "@/lib/docs";
 
 export const dynamic = "force-static";
 
 export async function GET() {
   const posts = getBlogPosts();
   const stories = getStories();
+  const projects = getAllProjects();
+  const docPages = projects.flatMap((project) =>
+    project.pages.map((page) => ({
+      title: page.title,
+      description: page.description,
+      content: page.content.slice(0, 500),
+      href: `/docs/${page.slug}`,
+      type: "doc" as const,
+    }))
+  );
 
   const items = [
     ...posts.map((p) => ({
@@ -22,6 +33,7 @@ export async function GET() {
       href: `/stories/${s.slug}`,
       type: "story" as const,
     })),
+    ...docPages,
   ];
 
   return Response.json(items);
