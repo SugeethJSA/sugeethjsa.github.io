@@ -2,6 +2,8 @@
 title: "My Defunct Companies"
 date: "2025-06-01"
 description: "The story of my failed ventures — AGNBOC, Flash 4 Friends, HSAG Ingeniousity, and the lessons I learned along the way."
+tags: [tech, reflection, learning]
+category: personal
 ---
 
 Back in the day, I used to have the dream of running companies. The CoVID-19 Lockdown provided me the opportunity to do so, and I did create quite a few companies. All of them failed however… Now, when I reflect back on it, I feel like laughing.

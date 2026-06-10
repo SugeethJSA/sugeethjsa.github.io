@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, Instagram, ExternalLink, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -78,6 +78,18 @@ export function Hero({ profile }: HeroProps) {
             <a href="mailto:sugeeth2007@gmail.com" className="p-3 rounded-full glassmorphism hover:scale-110 hover:text-primary transition-all duration-300">
               <Mail className="w-5 h-5" />
               <span className="sr-only">Email</span>
+            </a>
+            <a href="https://www.instagram.com/sugeethjsa" target="_blank" rel="noreferrer" className="p-3 rounded-full glassmorphism hover:scale-110 hover:text-primary transition-all duration-300">
+              <Instagram className="w-5 h-5" />
+              <span className="sr-only">Instagram</span>
+            </a>
+            <a href="https://www.reddit.com/user/sugeeth_jayaraj" target="_blank" rel="noreferrer" className="p-3 rounded-full glassmorphism hover:scale-110 hover:text-primary transition-all duration-300">
+              <ExternalLink className="w-5 h-5" />
+              <span className="sr-only">Reddit</span>
+            </a>
+            <a href="https://dsta.sh/GXwoUjEjcamb5Xii8" target="_blank" rel="noreferrer" className="p-3 rounded-full glassmorphism hover:scale-110 hover:text-primary transition-all duration-300">
+              <BookOpen className="w-5 h-5" />
+              <span className="sr-only">Deepstash</span>
             </a>
           </div>
         </motion.div>

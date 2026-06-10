@@ -23,4 +23,7 @@ A collection of practical how-to guides, tips, and reference materials I've put 
   <card title="Python File Sorting Script" href="/docs/tips/python-sort-script" icon="FileCode">
     Script to automatically sort school subject files into directories.
   </card>
+  <card title="Lawyer's Up — Debate Tips" href="/docs/tips/lawyers-up" icon="Scale">
+    18 argumentation rules and practice cases for mock trial events.
+  </card>
 </cardgrid>

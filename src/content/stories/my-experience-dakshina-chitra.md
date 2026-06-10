@@ -2,6 +2,8 @@
 title: "My Experience @ Dakshina Chitra"
 date: "2026-03-09"
 description: "A personal outlook and rant on a global phenomenon."
+tags: [travel, culture, reflection]
+category: travel
 ---
 
 Welcome back, dear viewers, to another experience that I would love to share with you'all! To start of, here's a quote I would like to give everyone some thought about…

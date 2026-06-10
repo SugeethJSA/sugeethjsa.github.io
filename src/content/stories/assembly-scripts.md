@@ -2,6 +2,8 @@
 title: "School Assembly Scripts"
 date: "2024-05-01"
 description: "MC scripts I wrote and delivered for school assemblies during Classes 8, 9, and 10."
+tags: [school, memories]
+category: school
 ---
 
 Back in Classes 8, 9, and 10, I frequently volunteered to be the MC for our school assemblies. I'd write the script, rehearse with my co-hosts, and deliver it in front of the entire class.

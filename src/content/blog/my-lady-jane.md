@@ -2,6 +2,8 @@
 title: "My Lady Jane: The Ultimate Young Adult Fictional Novel - A Book Review"
 date: "2026-04-10"
 description: "A deep dive into the coming-of-the-age alternate history novel 'My Lady Jane' by Cynthia Hand, Brodi Ashton and Jodi Meadows."
+tags: [review, book, fiction]
+category: review
 ---
 
 ## Bibliographical Information

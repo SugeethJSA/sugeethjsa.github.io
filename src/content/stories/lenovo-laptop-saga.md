@@ -2,6 +2,8 @@
 title: "The Lenovo Laptop Saga"
 date: "2024-03-01"
 description: "A four-year journey of a laptop that refused to stay fixed — touchpad shorts, burnt sub-boards, and barrel charger woes."
+tags: [tech, personal, humor]
+category: personal
 ---
 
 It started with a touchpad that stopped working. Then a wire that shorted. Then a sub-board that burnt out — literally, a fire hazard inside my laptop.

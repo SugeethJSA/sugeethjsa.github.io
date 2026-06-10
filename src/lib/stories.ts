@@ -12,6 +12,9 @@ export interface StoryPost {
   description: string;
   content: string;
   readingTime: string;
+  tags: string[];
+  category: string;
+  image?: string;
 }
 
 const cache = new Map<string, StoryPost[]>();
@@ -37,6 +40,9 @@ export function getStories(): StoryPost[] {
       description: matterResult.data.description,
       content: matterResult.content,
       readingTime: getReadingTime(matterResult.content),
+      tags: matterResult.data.tags ?? [],
+      category: matterResult.data.category ?? "personal",
+      image: matterResult.data.image ?? undefined,
     };
   });
 
@@ -47,9 +53,7 @@ export function getStories(): StoryPost[] {
 
 export function getStory(slug: string): StoryPost | null {
   const fullPath = path.join(storiesDirectory, `${slug}.md`);
-  if (!fs.existsSync(fullPath)) {
-    return null;
-  }
+  if (!fs.existsSync(fullPath)) return null;
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const matterResult = matter(fileContents);
 
@@ -60,5 +64,18 @@ export function getStory(slug: string): StoryPost | null {
     description: matterResult.data.description,
     content: matterResult.content,
     readingTime: getReadingTime(matterResult.content),
+    tags: matterResult.data.tags ?? [],
+    category: matterResult.data.category ?? "personal",
+    image: matterResult.data.image ?? undefined,
   };
+}
+
+export function getStoryCategories(): string[] {
+  const stories = getStories();
+  return Array.from(new Set(stories.map((s) => s.category).filter(Boolean)));
+}
+
+export function getStoryTags(): string[] {
+  const stories = getStories();
+  return Array.from(new Set(stories.flatMap((s) => s.tags))).sort();
 }

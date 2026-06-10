@@ -2,6 +2,8 @@
 title: "Dakshina Chitra: The Tapestry of South India"
 date: "2026-03-03"
 description: "Exploring Dakshina Chitra, the Living Museum that brings the rich history and traditions of South India to the modern world."
+tags: [travel, culture, history]
+category: travel
 ---
 
 Dakshina Chitra calls itself the "Living Museum", which is intriguing to think about it, but it masks a far deeper meaning under the guise of a simple phrase.

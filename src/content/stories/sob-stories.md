@@ -2,6 +2,8 @@
 title: "Sob Stories and Ranting"
 date: "2024-01-01"
 description: "A little bit of ranting, personal expression, and quotes that keep me going."
+tags: [personal, reflection]
+category: personal
 ---
 
 > ### Rant Coming up...

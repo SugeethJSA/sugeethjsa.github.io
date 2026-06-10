@@ -2,6 +2,8 @@
 title: "The Joint Election Commission of Class 9 C and 9 D"
 date: "2024-04-01"
 description: "How my friend Anurag and I served as Election Commissioners for an unforgettable class election activity."
+tags: [school, leadership, memories]
+category: school
 ---
 
 Back in Class 9, my friend Anurag and I were appointed as Election Commissioners for a class election. It wasn't a real election — just an activity — but we took it seriously.

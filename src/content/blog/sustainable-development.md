@@ -2,6 +2,8 @@
 title: "Sugeeth's Sustainable Development Project"
 date: "2024-02-01"
 description: "A comprehensive overview of sustainable development, its history, goals, and pillars."
+tags: [essay, sustainability, environment]
+category: essay
 ---
 
 ## What is Sustainable Development?

@@ -2,6 +2,8 @@
 title: "My Cultural Journey Through School"
 date: "2025-05-15"
 description: "A walk down memory lane — from Shipwreck competitions to Sports Day victories, this is my story of cultural events at Don Bosco."
+tags: [school, culture, memories]
+category: personal
 ---
 
 I've usually been an ardent participant in the cultural events at my school. They've always been a great platform to expose us to many other peers at my school and connect with them. Here's my journey through the years.

@@ -2,6 +2,8 @@
 title: "VIT Chennai: An experience to behold"
 date: "2026-02-01"
 description: "My journey from JEE trauma to finding my place at VIT Chennai."
+tags: [college, personal, life]
+category: personal
 ---
 
 Hello, everyone!

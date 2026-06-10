@@ -2,6 +2,8 @@
 title: "The Stages of Windows Destruction"
 date: "2024-01-15"
 description: "A humorous 11-stage journey of a Windows installation slowly falling apart."
+tags: [tech, humor, windows]
+category: tech
 ---
 
 Every Windows user knows the feeling. One day your PC is running fine. The next... it begins.

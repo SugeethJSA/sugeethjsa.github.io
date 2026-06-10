@@ -1,5 +1,6 @@
 import { getBlogPosts } from "@/lib/blog";
 import { getStories } from "@/lib/stories";
+import { getAllProjects } from "@/lib/docs";
 
 export const dynamic = "force-static";
 
@@ -7,6 +8,15 @@ export async function GET() {
   const siteUrl = "https://sugeethjsa.com";
   const posts = getBlogPosts();
   const stories = getStories();
+  const projects = getAllProjects();
+  const docPages = projects.flatMap((project) =>
+    project.pages.map((page) => ({
+      title: page.title,
+      description: page.description,
+      link: `${siteUrl}/docs/${page.slug}`,
+      pubDate: new Date(page.date).toUTCString(),
+    }))
+  );
 
   const items = [
     ...posts.map((post) => ({
@@ -21,6 +31,7 @@ export async function GET() {
       link: `${siteUrl}/stories/${story.slug}`,
       pubDate: new Date(story.date).toUTCString(),
     })),
+    ...docPages,
   ].sort((a, b) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime());
 
   const rss = `<?xml version="1.0" encoding="UTF-8"?>

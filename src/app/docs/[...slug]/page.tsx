@@ -2,9 +2,10 @@ import { getDoc, getProject, getAllProjects } from "@/lib/docs";
 import { notFound } from "next/navigation";
 import { MDXContent } from "@/components/mdx-components";
 import { TableOfContents } from "@/components/toc";
+import { Feedback } from "@/components/feedback";
 import { format, parseISO } from "date-fns";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, Clock, ChevronRight, FileText, FolderOpen } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock, ChevronRight, FileText, FolderOpen, Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 
@@ -144,9 +145,16 @@ export default async function DocPost({ params }: { params: Promise<{ slug: stri
                 {doc.title}
               </h1>
               <p className="text-base text-muted-foreground mt-2">{doc.description}</p>
+              <div className="flex items-center gap-4 text-xs text-muted-foreground mt-3">
+                <span className="flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  Last updated: {format(parseISO(doc.date), "MMMM d, yyyy")}
+                </span>
+              </div>
             </div>
 
             <MDXContent source={doc.content} />
+            <Feedback />
           </article>
         </main>
 

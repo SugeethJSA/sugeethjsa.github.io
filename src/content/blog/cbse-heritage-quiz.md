@@ -2,6 +2,8 @@
 title: "My experience with the CBSE Heritage India Quiz"
 date: "2022-11-20"
 description: "A summary of my experience participating in the prestigious CBSE Heritage India Quiz."
+tags: [school, quiz, heritage]
+category: school
 ---
 
 First and foremost, I am an Indian. I am proud to be a part of my family, school and country. So, what else can I do other than joyfully participate in a quiz on India's Heritage?

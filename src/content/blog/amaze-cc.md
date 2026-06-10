@@ -2,6 +2,8 @@
 title: "AmazeCC: My Journey with UniCC"
 date: "2026-06-02"
 description: "How I forked UniCC and built a comprehensive VTU companion app."
+tags: [tech, app, college]
+category: tech
 ---
 
 AmazeCC
